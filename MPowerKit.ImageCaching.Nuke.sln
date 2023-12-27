@@ -1,9 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.ImageCaching.Nuke", "MPowerKit.ImageCaching.Nuke\MPowerKit.ImageCaching.Nuke.csproj", "{8831F7EF-1691-4154-8D4C-5FDEF1F30245}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csproj", "{B0FD86AC-9821-4839-B3B2-6B934E3200EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.NukeProxy", "MPowerKit.NukeProxy\MPowerKit.NukeProxy.csproj", "{D09DF21C-3725-4A09-993E-97C8AD37FDB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8831F7EF-1691-4154-8D4C-5FDEF1F30245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8831F7EF-1691-4154-8D4C-5FDEF1F30245}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8831F7EF-1691-4154-8D4C-5FDEF1F30245}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8831F7EF-1691-4154-8D4C-5FDEF1F30245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0FD86AC-9821-4839-B3B2-6B934E3200EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0FD86AC-9821-4839-B3B2-6B934E3200EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0FD86AC-9821-4839-B3B2-6B934E3200EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0FD86AC-9821-4839-B3B2-6B934E3200EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D09DF21C-3725-4A09-993E-97C8AD37FDB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09DF21C-3725-4A09-993E-97C8AD37FDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09DF21C-3725-4A09-993E-97C8AD37FDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09DF21C-3725-4A09-993E-97C8AD37FDB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
