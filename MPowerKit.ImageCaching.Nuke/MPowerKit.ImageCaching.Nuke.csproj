@@ -11,7 +11,7 @@
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>MPowerKit.ImageCaching.Nuke</Title>
-		<Version>12.2.0.1</Version>
+		<Version>12.2.0.3</Version>
 		<Authors>MPowerKit,Alex Dobrynin</Authors>
 		<Description>Image caching library for .NET MAUI based on Kean's Nuke native library</Description>
 		<Copyright>MPowerKit</Copyright>

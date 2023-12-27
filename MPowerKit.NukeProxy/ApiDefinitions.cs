@@ -65,8 +65,12 @@ namespace MPowerKit.NukeProxy
 		[Export ("removeAllCaches")]
 		void RemoveAllCaches ();
 
-		// -(void)loadImageWithUrl:(NSURL * _Nonnull)url onCompleted:(void (^ _Nonnull)(UIImage * _Nullable, NSString * _Nonnull))onCompleted;
-		[Export ("loadImageWithUrl:onCompleted:")]
+        // -(void)loadScaledImageWithUrl:(NSURL * _Nonnull)url scale:(float)scale onCompleted:(void (^ _Nonnull)(UIImage * _Nullable, NSString * _Nonnull))onCompleted;
+        [Export("loadScaledImageWithUrl:scale:onCompleted:")]
+        void LoadScaledImageWithUrl(NSUrl url, float scale, Action<UIImage, NSString> onCompleted);
+
+        // -(void)loadImageWithUrl:(NSURL * _Nonnull)url onCompleted:(void (^ _Nonnull)(UIImage * _Nullable, NSString * _Nonnull))onCompleted;
+        [Export ("loadImageWithUrl:onCompleted:")]
 		void LoadImageWithUrl (NSUrl url, Action<UIImage, NSString> onCompleted);
 
 		// -(void)loadImageWithUrl:(NSURL * _Nullable)url placeholder:(UIImage * _Nullable)placeholder errorImage:(UIImage * _Nullable)errorImage into:(UIImageView * _Nonnull)into;

@@ -15,7 +15,8 @@ public class NukeFileImageSourceService : ImageSourceService, IImageSourceServic
         { 5, "@5x" },
         { 6, "@6x" },
     };
-    private readonly float _mainScreenScale;
+
+    private float _mainScreenScale;
 
     public NukeFileImageSourceService()
     {
@@ -24,7 +25,7 @@ public class NukeFileImageSourceService : ImageSourceService, IImageSourceServic
 
     public override async Task<IImageSourceServiceResult<UIImage>?> GetImageAsync(IImageSource imageSource, float scale = 1, CancellationToken cancellationToken = default)
     {
-        // HACK: MAUI does not pass scale to this method and it is always 1
+        // HACK: MAUI does not always provide scale for resources
         if (scale == 1) scale = _mainScreenScale;
 
         IFileImageSource fileImageSource = (IFileImageSource)imageSource;
@@ -62,7 +63,7 @@ public class NukeFileImageSourceService : ImageSourceService, IImageSourceServic
         UIImage image;
         try
         {
-            image = await NukeExtensions.LoadImageAsync(fileUrl);
+            image = await NukeExtensions.LoadImageAsync(fileUrl, scale);
         }
         catch
         {

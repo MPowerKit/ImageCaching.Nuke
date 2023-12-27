@@ -48,6 +48,26 @@ public class ImagePipeline : NSObject {
     }
     
     @objc
+    public func loadScaledImage(url: URL, scale: Float, onCompleted: @escaping (UIImage?, String) -> Void) {
+        let req = ImageRequest(
+            url: url,
+            userInfo: [ImageRequest.UserInfoKey.scaleKey : scale]
+        );
+        
+        _ = Nuke.ImagePipeline.shared.loadImage(
+            with: req,
+            completion: { result in
+                switch result {
+                case let .success(response):
+                    onCompleted(response.image, "success")
+                case let .failure(error):
+                    onCompleted(nil, error.localizedDescription)
+                }
+            }
+        )
+    }
+    
+    @objc
     public func loadImage(url: URL, onCompleted: @escaping (UIImage?, String) -> Void) {
         _ = Nuke.ImagePipeline.shared.loadImage(
             with: url,

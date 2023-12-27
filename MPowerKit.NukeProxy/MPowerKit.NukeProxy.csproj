@@ -3,17 +3,15 @@
   <PropertyGroup>
     <TargetFrameworks>net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
     <IsBindingProject>true</IsBindingProject>
+    <NoBindingEmbedding>true</NoBindingEmbedding>
 
     <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">13.0</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-maccatalyst'">13.1</SupportedOSPlatformVersion>
     <BindingPlatform>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</BindingPlatform>
 
-    <NoBindingEmbedding Condition="'$(TargetFramework)' == 'net8.0-ios'">false</NoBindingEmbedding>
-    <NoBindingEmbedding Condition="'$(TargetFramework)' == 'net8.0-maccatalyst'">true</NoBindingEmbedding>
-
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<Title>MPowerKit.NukeProxy</Title>
-	<Version>12.2.0</Version>
+	<Version>12.2.0.3</Version>
 	<Authors>MPowerKit,Alex Dobrynin</Authors>
 	<Description>Small .NET iOS and MacCatalyst binding proxy for Nuke image caching library</Description>
 	<Copyright>MPowerKit</Copyright>

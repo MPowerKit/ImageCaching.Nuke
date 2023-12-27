@@ -1,4 +1,6 @@
-﻿namespace MPowerKit.ImageCaching.Nuke;
+﻿using Microsoft.Maui.Hosting;
+
+namespace MPowerKit.ImageCaching.Nuke;
 
 public static class BuilderExtensions
 {

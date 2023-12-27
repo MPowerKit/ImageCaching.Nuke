@@ -20,14 +20,12 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 
-		//var shared = MPowerKit.ImageCaching.Nuke.ImagePipeline.Shared;
+		//var shared = MPowerKit.NukeProxy.ImagePipeline.Shared;
 		//var url = "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U";
 
 		//shared.LoadImageWithUrl(Foundation.NSUrl.FromString(url), (img, msg) =>
 		//{
 		//	var loaded = img;
 		//});
-    }
+	}
 }
-
-
