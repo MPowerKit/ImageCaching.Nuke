@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net8.0;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
 		<UseMaui>true</UseMaui>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
@@ -11,7 +11,7 @@
 
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>MPowerKit.ImageCaching.Nuke</Title>
-		<Version>12.2.0</Version>
+		<Version>12.2.0.1</Version>
 		<Authors>MPowerKit,Alex Dobrynin</Authors>
 		<Description>Image caching library for .NET MAUI based on Kean's Nuke native library</Description>
 		<Copyright>MPowerKit</Copyright>
@@ -43,7 +43,7 @@
 		</None>
 	</ItemGroup>
 
-	<ItemGroup>
+	<ItemGroup Condition="($(TargetFramework.Contains('ios')) OR $(TargetFramework.Contains('catalyst')))">
 	  <ProjectReference Include="..\MPowerKit.NukeProxy\MPowerKit.NukeProxy.csproj" />
 	</ItemGroup>
 </Project>
