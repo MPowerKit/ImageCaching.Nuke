@@ -53,10 +53,9 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\MPowerKit.NukeProxy\MPowerKit.NukeProxy.csproj" />
+	  <ProjectReference Include="..\MPowerKit.ImageCaching.Nuke\MPowerKit.ImageCaching.Nuke.csproj" />
 	</ItemGroup>
 </Project>

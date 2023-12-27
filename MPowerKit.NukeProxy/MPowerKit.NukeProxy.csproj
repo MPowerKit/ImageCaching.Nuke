@@ -13,7 +13,7 @@
 
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<Title>MPowerKit.NukeProxy</Title>
-	<Version>1.0.0</Version>
+	<Version>12.2.0</Version>
 	<Authors>MPowerKit,Alex Dobrynin</Authors>
 	<Description>Small .NET iOS and MacCatalyst binding proxy for Nuke image caching library</Description>
 	<Copyright>MPowerKit</Copyright>

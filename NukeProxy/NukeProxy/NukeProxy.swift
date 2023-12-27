@@ -62,7 +62,6 @@ public class ImagePipeline : NSObject {
         )
     }
     
-    
     @MainActor @objc
     public func loadImage(url: URL?, placeholder: UIImage?, errorImage: UIImage?, into: UIImageView) {
         let options = ImageLoadingOptions(placeholder:placeholder, failureImage: errorImage)

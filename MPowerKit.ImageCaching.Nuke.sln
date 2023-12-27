@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "Sample\Sample.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.NukeProxy", "MPowerKit.NukeProxy\MPowerKit.NukeProxy.csproj", "{D09DF21C-3725-4A09-993E-97C8AD37FDB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPowerKit.ImageCaching.Nuke", "MPowerKit.ImageCaching.Nuke\MPowerKit.ImageCaching.Nuke.csproj", "{1661C75C-0B2D-471F-B989-F3AD73B2587F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D09DF21C-3725-4A09-993E-97C8AD37FDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D09DF21C-3725-4A09-993E-97C8AD37FDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D09DF21C-3725-4A09-993E-97C8AD37FDB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1661C75C-0B2D-471F-B989-F3AD73B2587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1661C75C-0B2D-471F-B989-F3AD73B2587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1661C75C-0B2D-471F-B989-F3AD73B2587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1661C75C-0B2D-471F-B989-F3AD73B2587F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

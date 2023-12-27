@@ -1,1 +1,1 @@
-Image caching library for .NET MAUI
+Image caching library for .NET MAUI based on [Kean's Nuke](https://github.com/kean/Nuke) native library

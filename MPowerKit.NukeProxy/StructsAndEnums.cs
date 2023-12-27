@@ -1,6 +1,6 @@
 using ObjCRuntime;
 
-namespace MPowerKit.ImageCaching.Nuke
+namespace MPowerKit.NukeProxy
 {
 	[Native]
 	public enum Destination : long
