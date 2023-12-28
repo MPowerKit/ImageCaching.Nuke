@@ -10,7 +10,7 @@ Image caching library for .NET MAUI based on [Kean's Nuke](https://github.com/ke
 * .NET8 for iOS (min 13)
 * .NET8 for MacCatalyst (min 13.1)
 
-All you need, is to set up the library as next and you are good
+#### All you need, is to set up the library as next and you are good
 
 ```csharp
 builder
