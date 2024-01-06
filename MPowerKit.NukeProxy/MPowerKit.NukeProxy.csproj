@@ -35,6 +35,10 @@
   </ItemGroup>
 
   <ItemGroup>
+	<None Include="..\icon.png">
+	  <Pack>True</Pack>
+	  <PackagePath>\</PackagePath>
+	</None>
 	<None Include="..\LICENSE">
 		<Pack>True</Pack>
 		<PackagePath>\</PackagePath>
@@ -54,6 +58,7 @@
     <!-- Properties used to strip bitcode from frameworks when using Visual Studio for Windows -->
     <_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'!='Unix'">_ComputeFrameworkFilesToPublish</_StripBitcodeFromFrameworksMasterAfterTargets>
     <_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'!='Unix'">_StripBitcodeFromFrameworksOnWindows</_StripBitcodeFromFrameworksMasterDependsOnTargets>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <Target Name="_StripBitcodeFromFrameworksMasterTarget" Condition="'$(_StripBitcodeFromFrameworksMasterDependsOnTargets)'!='' AND @(_FrameworkNativeReference-&gt;Count()) != 0" AfterTargets="$(_StripBitcodeFromFrameworksMasterAfterTargets)" DependsOnTargets="$(_StripBitcodeFromFrameworksMasterDependsOnTargets)" />

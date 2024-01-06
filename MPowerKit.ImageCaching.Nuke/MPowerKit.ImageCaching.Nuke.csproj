@@ -20,6 +20,7 @@
 		<PackageTags>nuke;image;caching;image caching;maui;imagecaching</PackageTags>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup Condition="!($(TargetFramework.Contains('ios')) OR $(TargetFramework.Contains('catalyst')))">
@@ -33,6 +34,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Include="..\icon.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>
 		<None Include="..\LICENSE">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
