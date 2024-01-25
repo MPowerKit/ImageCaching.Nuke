@@ -1,11 +1,3 @@
-//
-//  NukeProxy.swift
-//  NukeProxy
-//
-//  Created by Jean-Marie Alfonsi on 06/03/2020.
-//  Copyright © 2020 Jean-Marie Alfonsi. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import Nuke
