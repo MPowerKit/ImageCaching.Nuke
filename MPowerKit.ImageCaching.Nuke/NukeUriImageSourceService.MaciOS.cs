@@ -28,7 +28,7 @@ public class NukeUriImageSourceService : ImageSourceService, IImageSourceService
         {
             image = await NukeExtensions.LoadImageAsync(nsUrl);
         }
-        catch
+        catch (Exception ex)
         {
             return null;
         }

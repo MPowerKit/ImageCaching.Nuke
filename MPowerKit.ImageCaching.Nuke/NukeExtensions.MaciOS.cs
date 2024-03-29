@@ -17,11 +17,11 @@ public static class NukeExtensions
             scale,
             (image, errorMessage) =>
             {
-                if (image == null)
+                if (image is null)
                 {
-                    tcs.SetException(new Exception(errorMessage.ToString()));
+                    tcs.TrySetException(new Exception(errorMessage?.ToString()));
                 }
-                tcs.SetResult(image);
+                else tcs.TrySetResult(image);
             });
 
         return tcs.Task;

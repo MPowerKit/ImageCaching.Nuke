@@ -65,7 +65,7 @@ public class NukeFileImageSourceService : ImageSourceService, IImageSourceServic
         {
             image = await NukeExtensions.LoadImageAsync(fileUrl, scale);
         }
-        catch
+        catch (Exception ex)
         {
             return null;
         }
