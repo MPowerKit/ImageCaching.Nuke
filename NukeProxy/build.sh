@@ -9,4 +9,4 @@ echo "create xcframework"
 xcodebuild -create-xcframework -framework Output/Output-iphonesimulator.xcarchive/Products/Library/Frameworks/NukeProxy.framework -framework Output/Output-iphoneos.xcarchive/Products/Library/Frameworks/NukeProxy.framework -framework Output/Output-maccatalyst.xcarchive/Products/Library/Frameworks/NukeProxy.framework -output Output/NukeProxy.xcframework
 
 echo "sharpie bind"
-sharpie bind --sdk=iphoneos17.4 --output="Output" --namespace="MPowerKit.NukeProxy" --scope="Output/NukeProxy.xcframework/ios-arm64/NukeProxy.framework/Headers" "Output/NukeProxy.xcframework/ios-arm64/NukeProxy.framework/Headers/NukeProxy-Swift.h"
+sharpie bind --sdk=iphoneos17.5 --output="Output" --namespace="MPowerKit.NukeProxy" --scope="Output/NukeProxy.xcframework/ios-arm64/NukeProxy.framework/Headers" "Output/NukeProxy.xcframework/ios-arm64/NukeProxy.framework/Headers/NukeProxy-Swift.h"
