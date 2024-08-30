@@ -5,13 +5,13 @@
     <IsBindingProject>true</IsBindingProject>
     <NoBindingEmbedding>true</NoBindingEmbedding>
 
-    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">13.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">13.1</SupportedOSPlatformVersion>
     <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-maccatalyst'">13.1</SupportedOSPlatformVersion>
     <BindingPlatform>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</BindingPlatform>
 
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	<Title>MPowerKit.NukeProxy</Title>
-	<Version>12.2.0.5</Version>
+	<Version>12.8.0</Version>
 	<Authors>MPowerKit,Alex Dobrynin</Authors>
 	<Description>Small .NET iOS and MacCatalyst binding proxy for Nuke image caching library</Description>
 	<Copyright>MPowerKit</Copyright>
@@ -27,8 +27,15 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
 
-  <ItemGroup>
-    <NativeReference Include="..\NukeProxy\Output\NukeProxy.xcframework">
+  <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+    <NativeReference Include="..\NukeProxy\Output\NukeProxy-ios.xcframework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+  </ItemGroup>
+
+  <ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
+    <NativeReference Include="..\NukeProxy\Output\NukeProxy-maccatalyst.xcframework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>

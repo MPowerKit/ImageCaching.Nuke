@@ -1,1 +1,1 @@
-github "kean/Nuke" == 12.2.0
+github "kean/Nuke" "main"
