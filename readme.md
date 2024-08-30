@@ -4,6 +4,8 @@ Image caching library for .NET MAUI based on [Kean's Nuke](https://github.com/ke
 
 [![NuGet](https://img.shields.io/nuget/v/MPowerKit.ImageCaching.Nuke.svg?maxAge=2592000)](https://www.nuget.org/packages/MPowerKit.ImageCaching.Nuke)
 
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/alexdobrynin)
+
 ## Supported Platforms
 
 * .NET8
