@@ -1,91 +1,90 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-    <IsBindingProject>true</IsBindingProject>
-    <NoBindingEmbedding>true</NoBindingEmbedding>
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-ios;net8.0-maccatalyst;net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+		<IsBindingProject>true</IsBindingProject>
+		<NoBindingEmbedding>true</NoBindingEmbedding>
 
-    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-ios'">13.1</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net8.0-maccatalyst'">13.1</SupportedOSPlatformVersion>
-    <BindingPlatform>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</BindingPlatform>
+		<SupportedOSPlatformVersion>14.0</SupportedOSPlatformVersion>
+		<BindingPlatform>$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)'))</BindingPlatform>
 
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<Title>MPowerKit.NukeProxy</Title>
-	<Version>12.8.0</Version>
-	<Authors>MPowerKit,Alex Dobrynin</Authors>
-	<Description>Small .NET iOS and MacCatalyst binding proxy for Nuke image caching library</Description>
-	<Copyright>MPowerKit</Copyright>
-	<PackageProjectUrl>https://github.com/MPowerKit/ImageCaching.Nuke</PackageProjectUrl>
-	<RepositoryUrl>https://github.com/MPowerKit/ImageCaching.Nuke</RepositoryUrl>
-	<PackageTags>nuke;image;caching;image caching</PackageTags>
-	<PackageLicenseFile>LICENSE</PackageLicenseFile>
-	<PackageReadmeFile>readme.md</PackageReadmeFile>
-  </PropertyGroup>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>MPowerKit.NukeProxy</Title>
+		<Version>12.8.0.1</Version>
+		<Authors>MPowerKit,Alex Dobrynin</Authors>
+		<Description>Small .NET iOS and MacCatalyst binding proxy for Nuke image caching library</Description>
+		<Copyright>MPowerKit</Copyright>
+		<PackageProjectUrl>https://github.com/MPowerKit/ImageCaching.Nuke</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/MPowerKit/ImageCaching.Nuke</RepositoryUrl>
+		<PackageTags>nuke;image;caching;image caching</PackageTags>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
-    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
-  </ItemGroup>
+	<ItemGroup>
+		<ObjcBindingApiDefinition Include="ApiDefinitions.cs" />
+		<ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+	</ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.Contains('ios'))">
-    <NativeReference Include="..\NukeProxy\Output\NukeProxy-ios.xcframework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
-  </ItemGroup>
+	<ItemGroup Condition="$(TargetFramework.Contains('ios'))">
+		<NativeReference Include="..\NukeProxy\Output\NukeProxy-ios.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+	</ItemGroup>
 
-  <ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
-    <NativeReference Include="..\NukeProxy\Output\NukeProxy-maccatalyst.xcframework">
-      <Kind>Framework</Kind>
-      <SmartLink>False</SmartLink>
-    </NativeReference>
-  </ItemGroup>
+	<ItemGroup Condition="$(TargetFramework.Contains('maccatalyst'))">
+		<NativeReference Include="..\NukeProxy\Output\NukeProxy-maccatalyst.xcframework">
+			<Kind>Framework</Kind>
+			<SmartLink>False</SmartLink>
+		</NativeReference>
+	</ItemGroup>
 
-  <ItemGroup>
-	<None Include="..\icon.png">
-	  <Pack>True</Pack>
-	  <PackagePath>\</PackagePath>
-	</None>
-	<None Include="..\LICENSE">
-		<Pack>True</Pack>
-		<PackagePath>\</PackagePath>
-	</None>
-	<None Include="..\readme.md">
-		<Pack>True</Pack>
-		<PackagePath>\</PackagePath>
-	</None>
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\icon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\LICENSE">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\readme.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
-  <!--hack from https://github.com/dotnet/maui/issues/10989--> 
-  <PropertyGroup>
-    <!-- Properties used to strip bitcode from frameworks when using Visual Studio for Mac -->
-    <_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'=='Unix'">_ExpandNativeReferences</_StripBitcodeFromFrameworksMasterAfterTargets>
-    <_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'=='Unix'">_StripBitcodeFromFrameworksOnMac</_StripBitcodeFromFrameworksMasterDependsOnTargets>
+	<!--hack from https://github.com/dotnet/maui/issues/10989-->
+	<PropertyGroup>
+		<!-- Properties used to strip bitcode from frameworks when using Visual Studio for Mac -->
+		<_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'=='Unix'">_ExpandNativeReferences</_StripBitcodeFromFrameworksMasterAfterTargets>
+		<_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'=='Unix'">_StripBitcodeFromFrameworksOnMac</_StripBitcodeFromFrameworksMasterDependsOnTargets>
 
-    <!-- Properties used to strip bitcode from frameworks when using Visual Studio for Windows -->
-    <_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'!='Unix'">_ComputeFrameworkFilesToPublish</_StripBitcodeFromFrameworksMasterAfterTargets>
-    <_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'!='Unix'">_StripBitcodeFromFrameworksOnWindows</_StripBitcodeFromFrameworksMasterDependsOnTargets>
-    <PackageIcon>icon.png</PackageIcon>
-  </PropertyGroup>
+		<!-- Properties used to strip bitcode from frameworks when using Visual Studio for Windows -->
+		<_StripBitcodeFromFrameworksMasterAfterTargets Condition="'$(OS)'!='Unix'">_ComputeFrameworkFilesToPublish</_StripBitcodeFromFrameworksMasterAfterTargets>
+		<_StripBitcodeFromFrameworksMasterDependsOnTargets Condition="'$(OS)'!='Unix'">_StripBitcodeFromFrameworksOnWindows</_StripBitcodeFromFrameworksMasterDependsOnTargets>
+	</PropertyGroup>
 
-  <Target Name="_StripBitcodeFromFrameworksMasterTarget" Condition="'$(_StripBitcodeFromFrameworksMasterDependsOnTargets)'!='' AND @(_FrameworkNativeReference-&gt;Count()) != 0" AfterTargets="$(_StripBitcodeFromFrameworksMasterAfterTargets)" DependsOnTargets="$(_StripBitcodeFromFrameworksMasterDependsOnTargets)" />
+	<Target Name="_StripBitcodeFromFrameworksMasterTarget" Condition="'$(_StripBitcodeFromFrameworksMasterDependsOnTargets)'!='' AND @(_FrameworkNativeReference-&gt;Count()) != 0" AfterTargets="$(_StripBitcodeFromFrameworksMasterAfterTargets)" DependsOnTargets="$(_StripBitcodeFromFrameworksMasterDependsOnTargets)" />
 
-  <Target Name="_StripBitcodeFromFrameworksOnMac" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False'">
+	<Target Name="_StripBitcodeFromFrameworksOnMac" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False'">
 
-    <!-- Find the bitcode_strip command -->
-    <Exec Command="xcrun -find bitcode_strip" ConsoleToMSBuild="true">
-      <Output TaskParameter="ConsoleOutput" PropertyName="_BitcodeStripCommand" />
-    </Exec>
+		<!-- Find the bitcode_strip command -->
+		<Exec Command="xcrun -find bitcode_strip" ConsoleToMSBuild="true">
+			<Output TaskParameter="ConsoleOutput" PropertyName="_BitcodeStripCommand" />
+		</Exec>
 
-    <!-- Strip the bitcode from frameworks -->
-    <Exec Command="$(_BitcodeStripCommand) %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
-  </Target>
+		<!-- Strip the bitcode from frameworks -->
+		<Exec Command="$(_BitcodeStripCommand) %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
+	</Target>
 
-  <Target Name="_StripBitcodeFromFrameworksOnWindows" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False' AND '$(IsMacEnabled)'=='true'">
+	<Target Name="_StripBitcodeFromFrameworksOnWindows" Condition="('$(OutputType)'!='Library' OR '$(IsAppExtension)'=='True') AND '$(_SdkIsSimulator)'=='False' AND '$(IsMacEnabled)'=='true'">
 
-    <!-- Strip the bitcode from frameworks -->
-    <Exec SessionId="$(BuildSessionId)" Command="&quot;%24(xcrun -find bitcode_strip)&quot; %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
+		<!-- Strip the bitcode from frameworks -->
+		<Exec SessionId="$(BuildSessionId)" Command="&quot;%24(xcrun -find bitcode_strip)&quot; %(_FrameworkNativeReference.Identity) -r -o %(_FrameworkNativeReference.Identity)" />
 
-    <CopyFileFromBuildServer SessionId="$(BuildSessionId)" File="%(_FrameworkNativeReference.Identity)" TargetFile="%(_FrameworkNativeReference.Identity)" />
-  </Target>
+		<CopyFileFromBuildServer SessionId="$(BuildSessionId)" File="%(_FrameworkNativeReference.Identity)" TargetFile="%(_FrameworkNativeReference.Identity)" />
+	</Target>
 </Project>
